@@ -34,11 +34,10 @@ in
         "ALT, K, movefocus, u"
         "ALT, L, movefocus, r"
         "$mod, G, togglegroup"
+        "Control, Shift+B, exec, waybar"
 
-        "SUPER, mouse_down, workspace, e-1"
-        "SUPER, mouse_up, workspace, e+1"
-
-        "SUPER, Tab, hyprexpo:expo, toggle"
+        "$mod, mouse_down, workspace, e-1"
+        "$mod, mouse_up, workspace, e+1"
         ", XF86AudioRaiseVolume, exec, swayosd-client --output-volume raise"
         ", XF86AudioLowerVolume, exec, swayosd-client --output-volume lower"
         ", XF86AudioMicMute, exec, pamixer --default-source -m"
@@ -70,13 +69,19 @@ in
     "$mod, mouse:273, resizewindow"
     ];
   binde = [
-    "SUPER, left, moveactive,-50 0"
-    "SUPER, right, moveactive,50 0"
-    "SUPER, up, moveactive,0 -50"
-    "SUPER, down, moveactive,0 50"
+    "$mod, left, moveactive,-50 0"
+    "$mod, right, moveactive,50 0"
+    "$mod, up, moveactive,0 -50"
+    "$mod, down, moveactive,0 50"
   ];
   gesture = [
     "3,horizontal,workspace"
   ];
+  
   };
+  wayland.windowManager.hyprland.extraConfig = ''
+    # hyprlang noerror true
+    bind = $mod, Tab, hyprexpo:expo, toggle"
+    # hyprlang noerror false
+  '';
 }

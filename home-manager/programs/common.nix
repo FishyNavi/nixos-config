@@ -1,4 +1,4 @@
-{ pkgs, ...}: {
+{ config, pkgs, ...}: {
   # TODO: categorize stuff for it to look better
   home.packages = with pkgs; [
     aspell # Spell check
@@ -23,7 +23,9 @@
     keepassxc
     pavucontrol
     playerctl
-    simplescreenrecorder
+    grim
+    slurp
+    swappy
     net-tools
     glances
     pciutils
@@ -71,7 +73,7 @@
     };
   };
   services.swayosd.enable = true; 
-  
+  services.swayosd.package = pkgs.swayosd;
   xdg.configFile."swayosd/style.css".text = let 
     bg = "#1e0048ff";    
     border = "#5D3FD3"; 

@@ -1,4 +1,4 @@
-{ pkgs, ...}: {
+{ pkgs,inputs, ...}: {
 
 
 
@@ -22,7 +22,8 @@
     ../../home-manager/hyprland
     ../../home-manager/shell
     ../../home-manager/programs
-    ../../home-manager/waybar
+
+    inputs.catppuccin.homeModules.catppuccin
   ];
 
   programs.git.settings.user = {

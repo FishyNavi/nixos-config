@@ -9,15 +9,10 @@
     hyprlock
     hyprpaper
     hyprshade
-
-    waybar
     pamixer
     wl-clipboard
     libnotify
     sysstat
-
-    mako
-    rofi
     cliphist
     kitty
     
