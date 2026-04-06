@@ -45,7 +45,7 @@
     obs-studio.enable = true; # !
 
   };
-  
+  catppuccin.dunst.enable = false;
   services.dunst = {
     enable = true;
     settings = {
@@ -93,9 +93,6 @@
     
     window#osd progress {
       background-color: ${text};
-    }
-    window#osd image {
-      display: none;
     }
   '';
 

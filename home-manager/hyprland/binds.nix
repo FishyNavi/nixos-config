@@ -23,7 +23,7 @@ in
         "$mod, C, exec, $code"
         "$mod, E, exec, $filemanager"
 
-        "$mod, A, exec, rofi -show run"
+        "$mod, A, exec, hyprctl keyword layerrule animation slide left, ^rofi$ &&  rofi -show run"
 
         "$mod, Q, killactive"
         "$mod SHIFT, Q, exec, hyprctl kill"
@@ -34,7 +34,9 @@ in
         "ALT, K, movefocus, u"
         "ALT, L, movefocus, r"
         "$mod, G, togglegroup"
-        "Control, Shift+B, exec, waybar"
+        "$mod, X, exec, hyprctl keyword layerrule animation slide rightz, ^rofi$ && rofi-powermenu"
+        "$mod, N, exec, hyprctl keyword layerrule animation popin 80%, ^rofi$ && rofi-dunst-manager"
+        "CONTROL SHIFT,B, exec, waybar"
 
         "$mod, mouse_down, workspace, e-1"
         "$mod, mouse_up, workspace, e+1"

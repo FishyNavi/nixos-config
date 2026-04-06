@@ -5,4 +5,11 @@
     # TODO: add stuff
 
   ];
+  wayland.windowManager.hyprland.settings.layerrule = [
+    
+    "blur, waybar"
+    "blur, rofi"
+    "animation slide ledt, rofi"
+    
+  ];
 }

@@ -5,6 +5,5 @@
       ./nc.nix
       ./gtk.nix
       ./waybar.nix
-      ./rofi.nix
     ];
 }

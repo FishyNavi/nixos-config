@@ -1,0 +1,58 @@
+@import "~/.config/rofi/config"
+configuration {
+    show-icons: false;
+    fixed-num-lines: false;
+}
+
+window {
+    border: 2px 0px 2px 2px;
+
+    border-radius:10px 0px 0px 10px;
+    location:    east;
+    anchor:      east;
+    width:       240px;
+    children:     [ mainbox ];
+
+}
+mainbox {
+    padding:  0px;
+    children: [ inputbar, message, listview ];
+}
+element {
+
+    border-radius: 8px;
+    horizontal-align: 0;
+    children:[ element-text]; 
+}
+
+
+listview {
+    border: 2px 0px 0px 0px solid;
+    
+    spacing:      4px;
+    scrollbar:    false;
+    layout:       vertical;
+    fixed-height: true;
+    lines: 5;
+    
+
+}
+
+inputbar {
+
+    children: [ entry ]; 
+    padding: 0px;
+    border: 0px;
+}
+entry {
+    enabled: false;
+}
+textbox {
+    font:             "Iosevka Nerd Font 12"; 
+}
+message {
+    padding:      5px;
+    border: 0px;
+    border-radius: 10px;
+    background-color: rgba(255, 255, 255, 0.05);
+}

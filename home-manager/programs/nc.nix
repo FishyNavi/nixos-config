@@ -36,6 +36,7 @@ let
 
       function warn_dunst_duplicate_id() {
         echo -e "gotcha\nback" | rofi -dmenu  --markup-rows           \
+          -theme-str 'window {location: center; width:600px; border: 2px; border-radius:6px;}'                     \
           -theme-str 'mainbox {children: [ "message", "listview" ];}' \
           -theme-str 'listview {columns: 2; lines: 1;}'               \
           -theme-str 'textbox {horizontal-align: 0.5;}'               \
@@ -50,7 +51,7 @@ let
         # -i for case insensitivity
         idx=$(get_notif_list | rofi -dmenu -p "History>" -markup-rows -format i -i  \
           -mesg "<span size=\"small\">ESC to quit</span>"     \
-          -theme-str 'window {height: 800px; width: 800px;}'  \
+          -theme-str 'window {height: 800px; width: 800px; location: center; border: 2px; border-radius:6px;}'  \
           -theme-str 'listview {columns: 1;}'                 \
           -theme-str 'textbox {horizontal-align: 0.5;}'       \
         )
@@ -68,6 +69,7 @@ let
         action=$(echo -e "back\ndelete\ndisplay" | rofi -dmenu -p ">" \
           -mesg "$msg" \
           -markup-rows \
+          -theme-str 'window {location: center; width:600px; border: 2px; border-radius:6px;}'                     \
           -theme-str 'mainbox {children: [ "message", "listview" ];}' \
           -theme-str 'listview {columns: 3; lines: 1;}'               \
       )

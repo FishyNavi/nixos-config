@@ -4,7 +4,7 @@
 
   catppuccin.enable = true;
   catppuccin.flavor = "mocha";
-
+  catppuccin.accent = "lavender";
   gtk = {
     enable = true;
     theme = {

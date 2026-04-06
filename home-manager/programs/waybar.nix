@@ -129,7 +129,7 @@
           exec = "dunstctl count history";
           format = "󱅫 {text}";
           interval = 10;
-          on-click = "rofi-dunst-manager";
+          on-click = "hyprctl keyword layerrule animation popin 80%, ^rofi$ && rofi-dunst-manager";
         };
 
         "hyprland/workspaces" = {

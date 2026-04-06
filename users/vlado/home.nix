@@ -22,6 +22,7 @@
     ../../home-manager/hyprland
     ../../home-manager/shell
     ../../home-manager/programs
+    ../../home-manager/rofi
 
     inputs.catppuccin.homeModules.catppuccin
   ];

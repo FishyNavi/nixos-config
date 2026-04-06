@@ -21,6 +21,7 @@
     tab_bar_style powerline
     map ctrl+c copy_or_interrupt
     map ctrl+v paste_from_clipboard
+    window_padding_width 5
 
   '';
   };

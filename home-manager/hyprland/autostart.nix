@@ -11,9 +11,6 @@
 
 
     ];
-    exec = [
-      "swayosd-server"
-    ];
     
   };
 }
