@@ -5,5 +5,7 @@
       ./nc.nix
       ./gtk.nix
       ./waybar.nix
+      ./hypridle.nix
+      ./hyprlock.nix
     ];
 }

@@ -60,6 +60,9 @@
           
           background-color: rgba(165, 65, 255,0.2);
       }
+      tooltip {
+          background: rgba(45, 40, 45, 0.8);
+      }
     '';
     settings = {
       mainBar = {
@@ -192,6 +195,7 @@
             title-len = 10;
             interval = 1;
             format-paused = "{status_icon} <i>{dynamic}</i>";
+            on-click = "eww o music-widget --toggle --screen=$(hyprctl activeworkspace | awk '/monitorID:/ {print $2}')";
             dynamic-order = ["title" "artist" "album"];
             player-icons = {
               default = "▶ ";

@@ -23,6 +23,7 @@
     ../../home-manager/shell
     ../../home-manager/programs
     ../../home-manager/rofi
+    ../../home-manager/eww
 
     inputs.catppuccin.homeModules.catppuccin
   ];

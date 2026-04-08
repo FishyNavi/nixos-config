@@ -1,0 +1,55 @@
+(deflisten song_title "playerctl metadata --format '{{title}}' --follow || echo 'Not Playing'")
+(deflisten song_artist "playerctl metadata --format '{{artist}}' --follow || echo 'Unknown Artist'")
+(deflisten player_status :initial "Stopped" "playerctl metadata --format '{{status}}' --follow || echo 'Stopped'")
+
+(defpoll cover_art  :interval "1s" "eww-album-art")
+
+(defpoll song_length_s   :interval "2s" "playerctl metadata mpris:length | awk '{print $1 / 1000000}' || echo 1")
+
+(defpoll song_position_s    :interval "1s" "playerctl position || echo 0")
+
+(defpoll formatted_position :interval "1s" "playerctl metadata --format '{{duration(position)}}' || echo '0:00'")
+(defpoll formatted_length :interval "1s" "playerctl metadata --format '{{duration(mpris:length)}}' || echo '0:00'")
+
+
+(deflisten cava :initial "" "eww-cava")
+
+(defwidget music_widget []
+    (box :class "music-widget" :orientation "v" :space-evenly false
+        (box :class "visual" :orientation "h" :space-evenly false
+            (box :class "cover-art" :style "background-image: url('${cover_art}');")
+            (label :class "cava-vizualizer" :text cava :valign "end"))
+        (box :class "music-progress" :orientation "h" :space-evenly false
+            (label :class "position" :text formatted_position)
+            (progress :class "bar" :hexpand true :valign "center"
+                    :value {song_length_s > 0 ? (song_position_s / song_length_s * 100) : 0}
+                    :orientation "h")
+            (label :class "length" :text formatted_length))
+        (box :class "info" :orientation "h" :space-evenly false
+            (label :class "song-title" :text song_title :limit-width 25)
+            (label :class "artist" :text song_artist :limit-width 25)
+            (box :class "meow" )
+            (box :class "controls" :orientation "h" :spacing 10
+                (button :onclick "playerctl previous" "󰒮")
+                (button :onclick "playerctl play-pause" {player_status == "Playing" ? "󰏤" : "󰐊"})
+                (button :onclick "playerctl next" "󰒭")
+            )
+            
+            
+
+            
+        )
+    )
+)
+(defwindow music-widget
+  :monitor 0
+  :geometry (
+    geometry :x "10px" 
+             :y "10px" 
+             :width "400px" 
+             :height "120px"
+             :anchor "top right"
+  )
+  :wm-ignore true
+  (music_widget)
+)

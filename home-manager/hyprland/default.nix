@@ -8,9 +8,11 @@
       "HDMI-A-1,  2560x1440@60,0x0,1"
     ]; # add if logic here sometime in future idk
     general = {
+
       gaps_in = 5;
       gaps_out = 10;
-      "col.active_border" = "rgba(33ccffee) rgba(00ff99ee) 45deg";
+      border_size = 0;
+      # "col.active_border" = "rgba(33ccffee) rgba(00ff99ee) 45deg";
     };
     decoration = {
       blur = {
@@ -18,8 +20,12 @@
         size = 5;
         passes = 1;
         new_optimizations = "on";
-
+      
       };
+      rounding = 10;
+      rounding_power = 4.0;
+      active_opacity = 1;
+      inactive_opacity = 0.8;
     };
   
     };
