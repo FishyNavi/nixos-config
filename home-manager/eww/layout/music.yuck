@@ -28,7 +28,7 @@
         (box :class "info" :orientation "h" :space-evenly false
             (label :class "song-title" :text song_title :limit-width 25)
             (label :class "artist" :text song_artist :limit-width 25)
-            (box :class "meow" )
+            (box :class "meow" :hexpand true)
             (box :class "controls" :orientation "h" :spacing 10
                 (button :onclick "playerctl previous" "󰒮")
                 (button :onclick "playerctl play-pause" {player_status == "Playing" ? "󰏤" : "󰐊"})

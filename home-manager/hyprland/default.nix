@@ -27,6 +27,10 @@
       active_opacity = 1;
       inactive_opacity = 0.8;
     };
+    misc = {
+      disable_hyprland_logo = true;
+      disable_splash_rendering = true;
+    };
   
     };
   };

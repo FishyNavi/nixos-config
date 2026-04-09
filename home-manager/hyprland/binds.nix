@@ -76,6 +76,7 @@ in
     "$mod, up, moveactive,0 -50"
     "$mod, down, moveactive,0 50"
   ];
+  bindl=[",switch:off:Lid Switch, exec, hyprlock --immediate"];
   gesture = [
     "3,horizontal,workspace"
   ];

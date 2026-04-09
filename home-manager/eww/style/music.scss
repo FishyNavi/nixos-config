@@ -1,4 +1,4 @@
-$bg-color: #1e1e2e;
+$bg-color: rgba(30, 30, 46, 0.8);
 $fg: #b662ff;
 $accent: #cd95ff;
 $subtext: #c1a1de;
@@ -8,8 +8,8 @@ $surface: #313244;
   background-color: $bg-color;
   color: $fg;
   padding: 15px;
-  border-radius: 5px;
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 10px;
+  border: 0px solid;
 }
 
 .visual {

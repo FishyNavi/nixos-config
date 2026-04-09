@@ -5,7 +5,6 @@
     aspellDicts.en
     aspellDicts.uk
     bat
-    btop
     dust # Disck usage
     ffmpeg
     glow # markown renerer for terminal
@@ -39,6 +38,8 @@
     cava
     tty-clock
     cmatrix
+    qimgv
+    conky
     
   ];
   programs= {

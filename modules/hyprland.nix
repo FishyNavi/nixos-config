@@ -6,7 +6,6 @@
   environment.systemPackages = with pkgs; [
     hyprpolkitagent
     hyprpicker
-    hyprlock
     hyprpaper
     hyprshade
     pamixer

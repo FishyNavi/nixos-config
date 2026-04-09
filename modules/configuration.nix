@@ -43,6 +43,10 @@
     xfce.thunar
 
   ];
+  programs.thunar.plugins = with pkgs.xfce; [
+    thunar-archive-plugin
+    thunar-volman
+  ];
   programs.zsh.enable = true;
   users.defaultUserShell = pkgs.zsh;
   environment.shells = with pkgs; [ zsh ];
