@@ -7,12 +7,12 @@ home.file."wallpapers/" = {
 };
 services.hyprpaper = {
   enable = true;
-  wallpaper = [
-    {
-      monitor = "";
-      path = "~walppapers/1.jpg";
-      fit_mode = cover;
-    }
-  ];
+  settings.
+  settings = {
+    splash = false;
+    preload = [ "~/wallpapers/1.jpg" ]; 
+    wallpaper = [ ",~/wallpapers/1.jpg" ]; 
+  };
+  
 };
 }
