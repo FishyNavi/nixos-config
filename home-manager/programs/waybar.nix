@@ -118,6 +118,7 @@ in
         };
         "temperature" = {
           format = " {temperatureC}"; # TODO: add format icons
+          hwmon-path = "/sys/class/hwmon/hwmon4/temp1_input"; 
         };
         "battery" = {
           bat = "BAT1";

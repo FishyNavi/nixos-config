@@ -10,5 +10,7 @@
       ./hyprpaper.nix
       ./conky.nix
       ./wluma.nix
+      ./swayosd.nix
+      ./fastfetch.nix
     ];
 }

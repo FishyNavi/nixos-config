@@ -8,6 +8,8 @@
       "wl-paste --type image --watch cliphist store"
       "swayosd-server"
       "hyprpaper"
+      "conky"
+      "wluma"
 
 
     ];
