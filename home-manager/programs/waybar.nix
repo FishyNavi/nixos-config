@@ -104,7 +104,7 @@ in
         position = "top";
         modules-left = [ "hyprland/workspaces" ];
         modules-center = [ "clock" ];
-        modules-right = [  "tray" "group/hardware" "mpris" "group/audio" "backlight" "battery" "power-profiles-daemon" "custom/grim" "network" "language" "custom/notification"   ];
+        modules-right = [  "tray" "group/hardware" "mpris" "group/audio" "backlight" "battery" "power-profiles-daemon" "custom/grim" "language" "custom/notification"   ];
         "memory" = {
           interval = 20;
           format = "  {percentage}%";
