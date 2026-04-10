@@ -4,13 +4,13 @@
 
   catppuccin.enable = true;
   catppuccin.flavor = "mocha";
-  catppuccin.accent = "lavender";
+  catppuccin.accent = "mauve";
   gtk = {
     enable = true;
     theme = {
-      name = "catppuccin-mocha-lavender-standard";
+      name = "catppuccin-mocha-mauve-standard";
       package = pkgs.catppuccin-gtk.override {
-        accents = [ "lavender" ]; 
+        accents = [ "mauve" ]; 
         size = "standard";
         variant = "mocha";
       };

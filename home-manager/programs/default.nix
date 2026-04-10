@@ -7,5 +7,8 @@
       ./waybar.nix
       ./hypridle.nix
       ./hyprlock.nix
+      ./hyprpaper.nix
+      ./conky.nix
+      ./wluma.nix
     ];
 }

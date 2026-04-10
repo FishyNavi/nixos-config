@@ -8,7 +8,7 @@
     dust # Disck usage
     ffmpeg
     glow # markown renerer for terminal
-    iftop # network bandwitch monitor
+    # iftop # network bandwitch monitor
     imagemagick # image manipulation
     killall
     pandoc # document converter
@@ -32,15 +32,13 @@
     fastfetch
     vesktop
     brightnessctl
-    wluma
 
     asciiquarium
     cava
     tty-clock
     cmatrix
     qimgv
-    conky
-    
+
   ];
   programs= {
     obs-studio.enable = true; # !

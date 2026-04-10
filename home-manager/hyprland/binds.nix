@@ -34,8 +34,9 @@ in
         "ALT, K, movefocus, u"
         "ALT, L, movefocus, r"
         "$mod, G, togglegroup"
-        "$mod, X, exec, hyprctl keyword layerrule animation slide rightz, ^rofi$ && rofi-powermenu"
-        "$mod, N, exec, hyprctl keyword layerrule animation popin 80%, ^rofi$ && rofi-dunst-manager"
+        "$mod, X, exec, hyprctl keyword layerrule animation slide right, ^rofi$ && rofi-powermenu"
+        "$mod, N, exec, hyprctl keyword layerrule animation popin 80%, ^rofi$ && rofi-dunst-manager" # this could be moved to the scipt but i think that ill forget that its there idk
+        "$mod, D, exec, hyprctl keyword layerrule animation popin 80%, ^rofi$ && rofi-cliphist"
         "CONTROL SHIFT,B, exec, waybar"
 
         "$mod, mouse_down, workspace, e-1"

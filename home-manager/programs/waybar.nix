@@ -1,4 +1,24 @@
 {pkgs, ...}:
+let
+  focus-window = pkgs.writeShellScriptBin "focus-window" ''
+    #!/bin/sh
+
+    address=$1
+
+    # https://api.gtkd.org/gdk.c.types.GdkEventButton.button.html
+    button=$2
+
+    if [ $button -eq 1 ]; then
+        # Left click: focus window
+        hyprctl keyword cursor:no_warps true
+        hyprctl dispatch focuswindow address:$address
+        hyprctl keyword cursor:no_warps false
+    elif [ $button -eq 2 ]; then
+        # Middle click: close window
+        hyprctl dispatch closewindow address:$address
+    fi
+  '';
+in
 {
   programs.waybar = {
     enable = true;
@@ -6,8 +26,6 @@
     style = ''
       * {
           all: unset;
-          border: none;
-          border-radius: 6px;
           font-family: "Iosevka Nerd Font", "Symbols Nerd Font", sans-serif;
           font-size: 13px; 
           margin: 0 2px;
@@ -16,24 +34,38 @@
           background-color: rgba(45, 40, 45, 0.8);
           padding-top: 5px;
           color:rgb(182, 98, 255);
-          
           transition: background-color 0.5s;
+          
+          
 
       }
       #workspaces button {
-          transition: background-color 0.5s;
+          
           opacity: 1;
-          padding-left: 5px;
-          padding-right: 10px;
           color: azure;
-          min-width: 40px;
-          margin: 2 0px;
+          border-bottom: 1px solid;
+          border-color:transparent;
+          
+          transition: border-color 0.5s;
+        
           
       }
       #workspaces button.empty {padding-right: 0px;} /* cant even center div in css */
-      #workspaces button.active {
+      #workspaces button.active {border-color:rgb(182, 98, 255);}
+      #workspaces button.urgent {
+          background-color: @urgent-color;
+      }
+      #workspaces .taskbar-window.active {
+        
           background: rgba(165, 65, 255,0.2);
       }
+      #workspaces .taskbar-window {
+        transition: background 0.5s;
+        border-top: 1px solid transparent;
+        font-weight: normal;
+        padding-right: 5px;
+      }
+
 
       #battery, #cpu, #memory, #temperature, #backlight, #pulseaudio, #wireplumber, #tray
       {
@@ -136,14 +168,21 @@
         };
 
         "hyprland/workspaces" = {
-          format = "{icon} {windows}";
-          window-rewrite-default = "";
-          "window-rewrite" = {
-            "title<.*youtube.*>" = "";
-            "class<firefox>" = "";
-            "class<firefox> title<.*github.*>" = "";
-            "kitty" = "";
-            "code" = "";
+          format = "{icon}: {windows}";
+          format-window-separator = "";
+          #"window-rewrite" = {
+          #  "title<.*youtube.*>" = "";
+          #  "class<firefox>" = "";
+          #  "class<firefox> title<.*github.*>" = "";
+          #  "kitty" = "";
+          #  "code" = "";
+          #};
+          workspace-taskbar = {
+            enable = true;
+            update-active-window = true;
+            format = "{icon} {title:.22}";
+            icon-size = 18;
+            on-click-window = "${focus-window}/bin/focus-window {address} {button}";
           };
 
         };
@@ -221,6 +260,7 @@
           };
           modules = ["pulseaudio" "pulseaudio#microphone"];
         };
+        
 
       # TODO: add network config idk
 

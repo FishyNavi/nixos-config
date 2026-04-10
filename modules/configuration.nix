@@ -6,7 +6,7 @@
     
     isNormalUser = true;
     description = "vlado";
-    extraGroups = ["networkmanager" "wheel" "audio" "video"];
+    extraGroups = ["networkmanager" "wheel" "audio" "video" "i2c"];
     initialPassword = "vlado"; # Change this with passwd!
 
   };
@@ -42,6 +42,8 @@
     nnn
     xfce.thunar
 
+    ddcutil # Thing
+
   ];
   programs.thunar.plugins = with pkgs.xfce; [
     thunar-archive-plugin
@@ -51,6 +53,9 @@
   users.defaultUserShell = pkgs.zsh;
   environment.shells = with pkgs; [ zsh ];
   hardware.bluetooth.enable = true;
+
+  # A thing
+  hardware.i2c.enable = true;
 
   # Printing
   services.printing.enable = true;

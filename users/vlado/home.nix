@@ -10,7 +10,7 @@
 
         packages = with pkgs; [
           firefox
-	        vscode
+	        vscodium
         ];
 
         stateVersion = "25.11";

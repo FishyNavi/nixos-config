@@ -5,7 +5,12 @@
     cacheHome = "${config.home.homeDirectory}/.cache";
     dataHome = "${config.home.homeDirectory}/.local/share";
     stateHome = "${config.home.homeDirectory}/.local/state";
-    
+  };
+  xdg.terminal-exec = {
+  enable = true;
+  settings = {
+    default = [ "kitty.desktop" ];
+  };
   };
 
   
