@@ -42,9 +42,9 @@
   };
   imports = [
     ./binds.nix
-    ./autostart.nix
     ./animations.nix
     ./windowrules.nix
     ./plugins.nix
+    ./autostart.nix
   ];
 }

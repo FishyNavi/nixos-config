@@ -5,7 +5,7 @@
   programs.zsh = {
     enable = true;
     enableCompletion = true;
-    initExtra = ''
+    initContent = ''
       source ${pkgs.zsh-powerlevel10k}/share/zsh-powerlevel10k/powerlevel10k.zsh-theme
       source ${./p10k.zsh}
     '';
@@ -20,6 +20,11 @@
       plugins = [
         "last-working-dir"
       ];
+    };
+    shellAliases = {
+      # conkyy = "systemctl --user reload-or-restart conky.service"; # ...
+      ff = "fastfetch";
+      meow = "echo meow";
     };
   };
 }

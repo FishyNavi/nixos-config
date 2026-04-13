@@ -8,7 +8,7 @@
       ./hypridle.nix
       ./hyprlock.nix
       ./hyprpaper.nix
-      ./conky.nix
+      # ./conky.nix # fk conky 
       ./wluma.nix
       ./swayosd.nix
       ./fastfetch.nix

@@ -6,10 +6,11 @@
       "nm-applet --indicator"
       "wl-paste --type text --watch cliphist store"
       "wl-paste --type image --watch cliphist store"
-      "swayosd-server"
       "hyprpaper"
-      "conky"
-      "wluma"
+      # "systemctl --user restart conky.service"
+      "systemctl --user restart wluma.service"
+      "systemctl --user restart swayosd.service"
+      
 
 
     ];
