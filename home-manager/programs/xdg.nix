@@ -5,13 +5,30 @@
     cacheHome = "${config.home.homeDirectory}/.cache";
     dataHome = "${config.home.homeDirectory}/.local/share";
     stateHome = "${config.home.homeDirectory}/.local/state";
-  };
-  xdg.terminal-exec = {
-  enable = true;
-  settings = {
-    default = [ "kitty.desktop" ];
-  };
-  };
 
+    mimeApps = {
+      enable = true;
+      defaultApplications = {
+        "application/pdf" = "firefox.desktop";
+        "image/*" = [
+          "qimgv.desktop"
+          "krita.desktop"
+          "firefox.destop"
+        ];
+        "text/*" = [
+          "codium.desktop" # add other/change
+        ];
+
+
+      };
+    };
+
+    terminal-exec = {
+      enable = true;
+      settings = {
+        default = [ "kitty.desktop" ];
+      };
+    };
+  };
   
 }
