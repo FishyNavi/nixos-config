@@ -40,20 +40,34 @@
     git
     lm_sensors
     nnn
-    xfce.thunar
 
     ddcutil # Thing
 
+    file-roller
+
+    
+
   ];
+  programs.thunar.enable = true;
   programs.thunar.plugins = with pkgs.xfce; [
     thunar-archive-plugin
     thunar-volman
   ];
+  services.gvfs.enable = true;
+  programs.xfconf.enable = true;
+ 
+
   programs.zsh.enable = true;
   users.defaultUserShell = pkgs.zsh;
   environment.shells = with pkgs; [ zsh ];
   hardware.bluetooth.enable = true;
 
+  # Tablet
+  hardware.opentabletdriver.enable = true;
+  # Required by OpenTabletDriver
+  hardware.uinput.enable = true;
+  boot.kernelModules = [ "uinput" ];
+  
   # A thing
   hardware.i2c.enable = true;
 
@@ -70,6 +84,15 @@
     pulse.enable = true;
     jack.enable = true;
   };
+
+
+  # garbage collection to keep disk space usage low
+  nix.gc = {
+  automatic = true;
+  dates = "weekly";
+  options = "--delete-older-than 7d";
+  };
+
   
   services.power-profiles-daemon.enable = true; # Enable power profiles
 

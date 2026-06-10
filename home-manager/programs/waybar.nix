@@ -209,9 +209,12 @@ in
           tooltip = false;
           format-source = "󰍬 {volume}%";
           format-source-muted = "󰍭 Muted";
-          on-click = "pamixer --default-source -t";
-          on-scroll-up = "pamixer --default-source -i 5";
-          on-scroll-down = "pamixer --default-source -d 5";
+
+          source = "default-source"; 
+          
+          on-click = "pamixer --source @DEFAULT_SOURCE@ -t";
+          on-scroll-up = "pamixer --source @DEFAULT_SOURCE@ -i 5";
+          on-scroll-down = "pamixer --source @DEFAULT_SOURCE@ -d 5";
           scroll-step = 5;
         };
         "custom/grim" = {

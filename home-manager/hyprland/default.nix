@@ -1,10 +1,10 @@
 {pkgs, ...}: {
-  
+  catppuccin.hyprland.enable = false;
   wayland.windowManager.hyprland = {
     enable = true;
     settings = {
     monitor = [
-      "eDP-1,1920x1080@60,2560x600,1.2"
+      "eDP-1,1920x1080@60,2560x600,1"
       "HDMI-A-1,  2560x1440@60,0x0,1"
     ]; # add if logic here sometime in future idk
     debug.disable_logs  = false;
@@ -44,7 +44,7 @@
     ./binds.nix
     ./animations.nix
     ./windowrules.nix
-    ./plugins.nix
+    # ./plugins.nix no hyprexpo?
     ./autostart.nix
   ];
 }

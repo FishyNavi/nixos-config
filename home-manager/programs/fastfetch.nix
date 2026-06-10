@@ -36,89 +36,89 @@
             "break",
             {
                 "type": "os",
-                "key": " ",
-                "keyColor": "34",  // = color4
+                "key": " ",
+                "keyColor": "#af00ff",  // = color4
             },
             {
                 "type": "kernel",
                 "key": " ",
-                "keyColor": "34",
+                "keyColor": "#af00ff",
             },
             {
                 "type": "packages",
                 "format": "{} (total)",
                 "key": " ",
-                "keyColor": "34",  
+                "keyColor": "#af00ff",  
             },
             {
                 "type": "shell",
                 "key": " ",
-                "keyColor": "34", 
+                "keyColor": "#af00ff", 
             },
             {
                 "type": "terminal",
                 "key": " ",
-                "keyColor": "34", 
+                "keyColor": "#af00ff", 
             },
             {
                 "type": "wm",
                 "key": " ",
-                "keyColor": "34", 
+                "keyColor": "#af00ff", 
             },
             {
                 "type": "display",
                 "key": "󰍹 ",
-                "keyColor": "34"
+                "keyColor": "#af00ff"
             },
             {
                 "type": "cpu",
                 "format": "{1}",
                 "key": " ",
-                "keyColor": "34"
+                "keyColor": "#af00ff"
             },
             {
                 "type": "gpu",
                 "format": "{2} {3}",
                 "key": " ",
-                "keyColor": "34"
+                "keyColor": "#af00ff"
             },
             {
                 "type": "memory",
                 "key": " ",
-                "keyColor": "34"
+                "keyColor": "#af00ff"
             },
             {
                 "type": "swap",
                 "key": "󰾴 ",
-                "keyColor": "34"
+                "keyColor": "#af00ff"
             },
             {
                 "type": "disk",
                 "key": " ",
-                "keyColor": "34"
+                "keyColor": "#af00ff"
             },
             {
                 "type": "uptime",
                 "key": " ",
-                "keyColor": "34", 
+                "keyColor": "#af00ff", 
             },
             {
                 "type": "command",
                 "key": "󱦟 ",
-                "keyColor": "34",
+                "keyColor": "#af00ff",
                 "text": "birth_install=$(stat -c %W /); current=$(date +%s); time_progression=$((current - birth_install)); days_difference=$((time_progression / 86400)); echo $days_difference days"
             },
             "break",
             {
                 "type": "command",
                 "key": " ",
-                "keyColor": "34",
+                "keyColor": "#af00ff",
                 "text": "hyprctl splash"
             },
             "break",
             {
                 "type": "custom",
-                "format": "\u001b[90m  \u001b[31m  \u001b[32m  \u001b[33m  \u001b[34m  \u001b[35m  \u001b[36m  \u001b[37m"
+                "format": "\u001b[90m  \u001b[31m  \u001b[32m  \u001b[33m  \u001b[34m  \u001b[35m  \u001b[36m "
             },
             "break",
             "break",

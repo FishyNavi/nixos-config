@@ -85,7 +85,8 @@ in
   programs.eww = {
     enable = true;
     package = pkgs.eww;
-    configDir = ./.;
+    
   };
+  xdg.configFile."eww".source = ./.; 
   home.packages = [cava album_art];
 }

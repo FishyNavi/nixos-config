@@ -1,7 +1,6 @@
 { pkgs,inputs, ...}: {
 
 
-
   # Homemanager config
 
   home = {
@@ -11,6 +10,18 @@
         packages = with pkgs; [
           firefox
 	        vscodium
+          osu-lazer-bin
+          prismlauncher
+
+          python3
+          pkgs.openjdk25
+
+          gcc
+          cmake
+          gnumake
+          boost
+          eigen
+          gdb
         ];
 
         stateVersion = "25.11";
@@ -28,9 +39,12 @@
     inputs.catppuccin.homeModules.catppuccin
   ];
 
-  programs.git.settings.user = {
-    name = "vlado";
-    email = "vladoant@proton.me";
+  programs.git= {
+    enable = true; # silly me
+    settings.user = {
+      name = "vlado";
+      email = "vladoant@proton.me";
+    };
   };
       
 

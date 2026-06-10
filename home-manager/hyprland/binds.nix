@@ -83,9 +83,9 @@ in
   ];
   
   };
-  wayland.windowManager.hyprland.extraConfig = ''
-    # hyprlang noerror true
-    bind = $mod, Tab, hyprexpo:expo, toggle"
-    # hyprlang noerror false
-  '';
+  #wayland.windowManager.hyprland.extraConfig = ''
+  #  # hyprlang noerror true
+  #  bind = $mod, Tab, hyprexpo:expo, toggle"
+  #  # hyprlang noerror false
+  #'';
 }
